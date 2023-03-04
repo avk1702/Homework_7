@@ -4,21 +4,18 @@
 // 1  -3,3  8  -9,9 
 // 8  7,8 -7,1  9
 
-internal class Program
+void FillMatrix(double[,] matr)
 {
-  private static void Main(string[] args)
-  {
-    double[,] matr = new double[3, 4];
-
-    Random random = new Random();
-    for (int i = 0; i < 3; i++)
+for (int i = 0; i < 3; i++)
+{
+    for (int j = 0; j < 4; j++)
     {
-      for (int j = 0; j < 4; j++)
-      {
+        Random random = new Random();
         matr[i, j] = random.NextDouble() * 10; 
         Console.Write("{0,6:F1}", matr[i, j]);
-      }
-      Console.WriteLine();
     }
-  }
+    Console.WriteLine();
 }
+}
+double[,] matr = new double[3, 4];
+FillMatrix(matr);
